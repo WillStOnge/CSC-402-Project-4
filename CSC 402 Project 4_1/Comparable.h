@@ -14,19 +14,20 @@ using namespace std;
 template<typename T>
 class Comparable
 {
-	/** Assumptions:
-		TODO: Document at least three assumptions that your code makes about T
-		1. The relational operator types are going to be the same (e.g. int and int).
+	/*  Assumptions:
+		1. The relational operator T's are the same type.
 		2. T has an override for the insertion operator.
-		3. 
-	*/
+		3. T cleans itself up properly (Proper deconstructor).  */
 public:
 	// Constructors
 	explicit Comparable(const T& init = T()) : value(init) { }
 	Comparable(const Comparable<T>& init) : value(init.value) { }
 
-	// TODO: Destructor
-	~Comparable() { }
+	// Destructor
+	~Comparable() 
+	{ 
+		delete value;
+	}
 
 	// Copy assignment operator
 	Comparable<T>& operator=(const Comparable<T>& rhs)
@@ -72,7 +73,7 @@ public:
 		return value >= rhs.value;
 	}
 
-private: 
+private:
 	T value;
 };
 
