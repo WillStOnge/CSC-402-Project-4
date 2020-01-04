@@ -1,8 +1,8 @@
 /*
 File Name: testComparable.cpp
-Author: Dr. Aziz Bahha
-Course/Project: CSC 402/502 Project 4 Test Driver Both
-Date: 00/00/
+Author: Will St. Onge
+Course: CSC 402
+Date: 
 */
 
 #include <string>
@@ -230,7 +230,7 @@ int main()
 	cout << endl;
 
 	// disallowed with the explicit modifier, but you can test your compiler 
-	// Comparable<Character> cc1{ 'A' };
+	//Comparable<Character> cc1{ 'A' };
 
 	// But if we construct the Character explicitly, it works
 	Character _cc1('A');
@@ -247,7 +247,31 @@ int main()
 	sort(vci.begin(), vci.end());
 	cout << endl << "vci after sort:" << endl;
 	print(vci);
-	cout << "isSorted(vci): " << isSorted(vci) << endl;
+	cout << "isSorted(vci): " << isSorted(vci) << endl << endl;
+
+	Comparable<wchar_t> w1;
+	Comparable<wchar_t> w2('a');
+	Comparable<wchar_t> w3('V');
+	Comparable<wchar_t> w4(w3);
+	Comparable<wchar_t> w5 = w2;
+
+	cout << endl << "Comparable<wchar_t> relational operator tests:" << endl << SEPARATOR << endl;
+	(w1 < w2) ? cout << "w1 < w2 is " << (i1 < i2) << endl : cout << "ERROR: w1 <  w2 should be true" << endl;
+	(w1 != w2) ? cout << "w1 != w2 is " << (i1 != i2) << endl : cout << "ERROR: w1 != w2 should be true" << endl;
+	(w1 <= w2) ? cout << "w1 <= w2 is " << (i1 <= i2) << endl : cout << "ERROR: w1 <= w2 should be true" << endl;
+	(w3 == w3) ? cout << "w3 == w3 is " << (i1 == i1) << endl : cout << "ERROR: w2 == w3 should be true" << endl;
+	(w3 > w5) ? cout << "w4 >  w5 is " << (i2 > i1) << endl : cout << "ERROR: w4 >  w5 should be true" << endl;
+	(i2 == i3) ? cout << "w2 == w3 is " << (i2 == i3) << endl : cout << "ERROR: w2 == w3 should be true" << endl;
+	(w3 >= w4) ? cout << "w3 >= w4 is " << (i2 >= i1) << endl : cout << "ERROR: w3 >= w4 should be true" << endl;
+	(w4 >= w1) ? cout << "w4 >= w1 is " << (i3 >= i3) << endl : cout << "ERROR: w4 >= w1 should be true" << endl;
+	(w5 == w2) ? cout << "w5 == w2 is " << (i4 == i3) << endl : cout << "ERROR: w5 == w2 should be true" << endl << endl;
+
+	cout << endl << "Comparable<wchar_t> insertion operator tests:" << endl << SEPARATOR << endl;
+	cout << "w1: " << w1 << endl;
+	cout << "w2: " << w2 << endl;
+	cout << "w3: " << w3 << endl;
+	cout << "w4: " << w4 << endl;
+	cout << "w5: " << w5 << endl;
 
 	cout << endl << "Hit any key to end the program..." << endl;
 	cin.get();

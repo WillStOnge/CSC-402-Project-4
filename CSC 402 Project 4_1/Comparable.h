@@ -22,15 +22,8 @@ class Comparable
 	*/
 public:
 	// Constructors
-	explicit Comparable(const T& init = T())
-	{ 
-		value = init;
-	}
-
-	Comparable(const Comparable<T>& init) : value(init.value)
-	{ 
-		value = init.value;
-	}
+	explicit Comparable(const T& init = T()) : value(init) { }
+	Comparable(const Comparable<T>& init) : value(init.value) { }
 
 	// TODO: Destructor
 	~Comparable() { }
