@@ -2,7 +2,7 @@
 File Name: testComparable.cpp
 Author: Will St. Onge
 Course: CSC 402
-Date: 
+Date: 1/3/20
 */
 
 #include <string>
